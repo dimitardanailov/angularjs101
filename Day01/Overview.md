@@ -58,7 +58,53 @@
 ### Bootstrapping
 
 ```javascript
-<html ng-app="html">
+<html ng-app="mentormate">
+```
+
+### John Papa: controllerAs Controller Syntax
+
+> Use the `controllerAs` syntax over the `classic controller with $scope` syntax.
+> The `controllerAs` syntax uses `this` inside controllers which gets bound to `$scope`. 
+> Why?: `controllerAs` is syntactic sugar over `$scope`. You can still bind to the View and still access `$scope` methods.
+> Why?: Helps avoid the temptation of using `$scope` methods inside a controller when it may otherwise be better to avoid them or move the method to a factory, and reference them from the controller. Consider using `$scope` in a controller only when needed. For example when publishing and subscribing events using `$emit`, `$broadcast`, or `$on`.
+
+```javascript
+/* avoid */
+function CustomerController($scope) {
+	$scope.name = {};
+	$scope.sendMessage = function() { };
+}
+```
+
+```javascript
+/* recommended - but see next section */
+function CustomerController() {
+	this.name = {};
+	this.sendMessage = function() { };
+}
+```
+
+### John Papa: controllerAs with vm
+
+> Use a capture variable for `this` when using the `controllerAs` syntax. Choose a consistent variable name such as `vm`, which stands for `ViewModel`.
+
+> Why?: The `this` keyword is contextual and when used within a function inside a controller may change its context. Capturing the context of `this` avoids encountering this problem.
+
+```javascript
+/* avoid */
+function CustomerController() {
+	this.name = {};
+	this.sendMessage = function() { };
+}
+```
+
+```javascript
+/* recommended */
+function CustomerController() {
+	var vm = this;
+	vm.name = {};
+	vm.sendMessage = function() { };
+}
 ```
 
 ### Data binding: Interpolation
@@ -70,7 +116,7 @@
 ### Data binding: One way
 
 ```javascript
-<h3 ng-bind="vm.story.name></h3>
+<h3 ng-bind="vm.story.name"></h3>
 ```
 
 [Demo](https://plnkr.co/edit/fI6iPCLae8QIdct10jIy?p=preview)
@@ -83,12 +129,8 @@
 	ng-blur="vm.log('blur')">OK</button>
 ```
 
-[Demo](https://plnkr.co/edit/fI6iPCLae8QIdct10jIy?p=preview)
-
 ### Data binding: Two way	
 
 ```javascript
 <input ng-model="vm.story.name"/>
 ```
-
-[Demo](https://plnkr.co/edit/fI6iPCLae8QIdct10jIy?p=preview)
