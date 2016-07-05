@@ -64,8 +64,11 @@
 ### John Papa: controllerAs Controller Syntax
 
 > Use the `controllerAs` syntax over the `classic controller with $scope` syntax.
+
 > The `controllerAs` syntax uses `this` inside controllers which gets bound to `$scope`. 
+
 > Why?: `controllerAs` is syntactic sugar over `$scope`. You can still bind to the View and still access `$scope` methods.
+
 > Why?: Helps avoid the temptation of using `$scope` methods inside a controller when it may otherwise be better to avoid them or move the method to a factory, and reference them from the controller. Consider using `$scope` in a controller only when needed. For example when publishing and subscribing events using `$emit`, `$broadcast`, or `$on`.
 
 ```javascript
@@ -124,9 +127,7 @@ function CustomerController() {
 ### Data binding: Event binding
 
 ```javascript
-<button
-  ng-click="vm.log('click')"
-	ng-blur="vm.log('blur')">OK</button>
+<button ng-click="vm.log('click')" ng-blur="vm.log('blur')">OK</button>
 ```
 
 ### Data binding: Two way	
