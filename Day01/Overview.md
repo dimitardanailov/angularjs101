@@ -150,24 +150,16 @@ function CustomerController() {
 ```
 
 ```javascript
-(function () {
-  angular
-    .module('app')
-    .controller('StoryController', StoryController);
-	
-		// Dependency Injection
-		StoryController.$inject = ['StoryService'];
+angular
+  .module('app')
+  .controller('VehiclesController', VehiclesController);
 
-    function StoryController() {
-      var vm = this;
-      vm.story = {
-        'id': 100,
-        'name': 'The Force Awekens'
-      }
-
-			vm.stories = StoryService.getStories();
-    }
-})();
+VehiclesController.$inject = ['VehiclesService']; // Injection
+function VehiclesController(VehiclesService) { // Injection
+  var vm = this;
+  vm.tile = 'Services';
+  vm.vehicles = VehiclesService.getVehicles();
+}
 ```
 
 [Demo](https://plnkr.co/edit/FbJSgeTjk3F1MQCqsqLe?p=info)
