@@ -57,7 +57,7 @@
 
 ### Bootstrapping
 
-```javascript
+```html
 <html ng-app="mentormate">
 ```
 
@@ -112,13 +112,13 @@ function CustomerController() {
 
 ### Data binding: Interpolation
 
-```javascript
+```html
 <h3>{{ vm.story.name }}</h3>
 ```
 
 ### Data binding: One way
 
-```javascript
+```html
 <h3 ng-bind="vm.story.name"></h3>
 ```
 
@@ -126,14 +126,43 @@ function CustomerController() {
 
 ### Data binding: Event binding
 
-```javascript
+```html
 <button ng-click="vm.log('click')" ng-blur="vm.log('blur')">OK</button>
 ```
 
 ### Data binding: Two way	
 
-```javascript
+```html
 <input ng-model="vm.story.name"/>
 ```
 
 [Demo](https://plnkr.co/edit/IhN5w2nqfyvgKG1XQaZO?p=info)
+
+### Modules
+
+> “The secret to building large apps is never build large apps. Break your applications into small pieces. Then, assemble those testable, bite-sized pieces into your big application” - Justin Meyer Author JavaScriptMVC
+
+```html
+<body ng-controller="StoryController as vm">
+	<h3>{{ vm.story.name }}</h3>
+	<h3 ng-bind="vm.story.name"></h3>
+</body>
+```
+
+```javascript
+(function () {
+  angular
+    .module('app')
+    .controller('StoryController', StoryController);
+
+    function StoryController() {
+      var vm = this;
+      vm.story = {
+        'id': 100,
+        'name': 'The Force Awekens'
+      }
+    }
+})();
+```
+
+[Demo](https://plnkr.co/edit/FbJSgeTjk3F1MQCqsqLe?p=info)
