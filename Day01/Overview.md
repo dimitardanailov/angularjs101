@@ -136,4 +136,4 @@ function CustomerController() {
 <input ng-model="vm.story.name"/>
 ```
 
-[Demo](https://plnkr.co/edit/fI6iPCLae8QIdct10jIy?p=preview)
+[Demo](https://plnkr.co/edit/IhN5w2nqfyvgKG1XQaZO?p=info)
