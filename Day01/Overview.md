@@ -158,15 +158,15 @@ function CustomerController() {
 		// Dependency Injection
 		StoryController.$inject = ['StoryService'];
 
-    function StoryController() {
-      var vm = this;
-      vm.story = {
-        'id': 100,
-        'name': 'The Force Awekens'
-      }
+		function StoryController() {
+			var vm = this;
+			vm.story = {
+				'id': 100,
+				'name': 'The Force Awekens'
+			}
 
 			vm.stories = StoryService.getStories();
-    }
+		}
 })();
 ```
 
