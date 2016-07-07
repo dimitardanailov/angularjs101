@@ -135,3 +135,5 @@ function CustomerController() {
 ```javascript
 <input ng-model="vm.story.name"/>
 ```
+
+[Demo](https://plnkr.co/edit/fI6iPCLae8QIdct10jIy?p=preview)
