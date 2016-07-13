@@ -75,9 +75,9 @@ function VehiclesController(VehiclesService) { // Injection
 ### Select
 
 ```html
-<select ng-options="vehicle as vehicle.name for vehicle in vm.vehicles track by vehicle.id" 
-				ng-change="vm.change()"
-				ng-model="vm.selectedVehicle"></select>
+<select ng-options="vehicle as vehicles.name for vehicle in vm.vehicles track by vehicle.id" 
+	ng-change="vm.change()"
+	ng-model="vm.selectedVehicle"></select>
 ```
 
 [Demo](https://plnkr.co/edit/f30KUWaL5MDfVzvQg8H5?p=preview)
