@@ -29,7 +29,7 @@ function VehiclesController(VehiclesService) { // Injection
 ### Angular directives
 
 ```html
-<!-
+<!--
   Angular 1
 -->
 <div ng-style="vm.story ? { visibility : 'visible'} : {'visibility: 'hidden'}">
@@ -40,6 +40,20 @@ function VehiclesController(VehiclesService) { // Injection
 		<a ng-href="{{vm.link}}">
 		{{vm.story}}
 		</a>
+	</div>
+</div>
+```
+
+```html
+<!--
+  Angular 2 Template Concepts Remove 40+ Angular 1 Built-In Directives
+-->
+<div [style.visibility] = "story ? 'visible' : 'hidden'>
+	<div>
+		<img [src]="imagePath" />
+	</div>
+	<div>
+		<a [href]="link">{{story}}</a>
 	</div>
 </div>
 ```
@@ -58,17 +72,12 @@ function VehiclesController(VehiclesService) { // Injection
 
 [Demo](https://plnkr.co/edit/qJlYKRXnnWds5b01CLc1?p=preview)
 
+### Select
 
 ```html
-<!-
-  Angular 2 Template Concepts Remove 40+ Angular 1 Built-In Directives
--->
-<div [style.visibility] = "story ? 'visible' : 'hidden'>
-	<div>
-		<img [src]="imagePath" />
-	</div>
-	<div>
-		<a [href]="link">{{story}}</a>
-	</div>
-</div>
+<select ng-options="vehicle as vehicle.name for vehicle in vm.vehicles track by vehicle.id" 
+				ng-change="vm.change()"
+				ng-model="vm.selectedVehicle"></select>
 ```
+
+[Demo](https://plnkr.co/edit/f30KUWaL5MDfVzvQg8H5?p=preview)
