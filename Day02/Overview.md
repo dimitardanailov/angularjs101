@@ -81,3 +81,31 @@ function VehiclesController(VehiclesService) { // Injection
 ```
 
 [Demo](https://plnkr.co/edit/f30KUWaL5MDfVzvQg8H5?p=preview)
+
+### Services, Factories
+
+```html
+<body ng-controller="StoryController as vm">
+	<h3>{{ vm.story.name }}</h3>
+	<h3 ng-bind="vm.story.name"></h3>
+</body>
+```
+
+```javascript
+angular
+  .module('app')
+  .controller('VehiclesController', VehiclesController);
+
+VehiclesController.$inject = ['VehiclesService']; // Injection
+function VehiclesController(VehiclesService) { // Injection
+  var vm = this;
+  vm.tile = 'Services';
+  vm.vehicles = VehiclesService.getVehicles();
+}
+```
+
+### Directives
+
+### Filters
+
+### Components
