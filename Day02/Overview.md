@@ -84,6 +84,10 @@ function VehiclesController(VehiclesService) { // Injection
 
 ### Services, Factories
 
+ - [Services](https://docs.angularjs.org/guide/services)
+ - [AngularJS: Service vs provider vs factory](http://stackoverflow.com/questions/15666048/angularjs-service-vs-provider-vs-factory)
+ - [What is the difference between module.factory and module.service and how might both be applied?](https://groups.google.com/forum/#!msg/angular/56sdORWEoqg/HuZsOsMvKv4J)
+
 ```html
 <body ng-controller="StoryController as vm">
 	<h3>{{ vm.story.name }}</h3>
@@ -104,8 +108,104 @@ function VehiclesController(VehiclesService) { // Injection
 }
 ```
 
+```javascript
+angular
+  .module('app')
+  .controller('VehicleService', VehicleService);
+
+function VehicleService() {
+	this.getVehicles = function() {
+		return [
+			{ 'id': 1, 'name': 'X-Wing Fighter' },
+			{ 'id': 2, 'name': 'Tie Fighter' },
+			{ 'id': 3, 'name': 'Y-Wing Fighter' }
+		]
+	}
+}
+```
+
+[Demo](https://plnkr.co/edit/wutgIQPFcj4ucPR3Rbns?p=preview)
+
 ### Directives
+
+[Documentation](https://docs.angularjs.org/guide/directive)
+
+```html
+<tab></tab>
+```
+
+```javascript
+angular.module('app', []);
+
+angular
+	.module('app')
+	.config(configure);
+
+configure.$inject = [];
+
+angular
+	.module('app')
+	.run(runBlock);
+
+runBlock.$inject = [];
+```
+
+```javascript
+angular
+	.module('app')
+	.directive('tab', tab);
+
+tab.$inject = [];
+
+function tab() {
+	return {
+		restrict: 'E', // only matches element name,
+		templateUrl: 'tab.html',
+		controller: 'TabController',
+		controllerAs: 'ctrl',
+
+		// Angular 1.3 introduces a new property to the directive definition object 
+		// called bindToController, which does exactly what it says. 
+		// When set to true in a directive with isolated scope that uses controllerAs, 
+		// the component’s properties are bound to the controller rather than to the scope.
+
+		// In version 1.4, bindToController gets even more powerful. 
+		// When having an isolated scope with properties to be bound to a controller, 
+		// we always define those properties on the scope definition and bindToController is set to true. 
+		// In 1.4 however, we can move all our property binding definitions to bindToController and make it an object literal.
+
+		// source: http://blog.thoughtram.io/angularjs/2015/01/02/exploring-angular-1.3-bindToController.html
+		bindToController: true
+	}
+}
+```
+
+```javascript
+angular
+	.module('app')
+	.controller('TabController', TabController);
+
+TabController.$inject = [];
+
+function TabController() {
+	var ctrl = this;
+	ctrl.subTabs = [
+		{ 'id': 1, 'name': 'Sub Tab 1' },
+		{ 'id': 2, 'name': 'Sub Tab 2' },
+		{ 'id': 3, 'name': 'Sub Tab 3' },
+		{ 'id': 4, 'name': 'Sub Tab 4' },
+		{ 'id': 5, 'name': 'Sub Tab 5' }
+	}
+}
+```
+
+[Demo](https://plnkr.co/edit/yVsK3uAI6yx9Md4xa0s2?p=preview)
 
 ### Filters
 
 ### Components
+
+[Documentation](https://docs.angularjs.org/guide/component)
+
+```javascript
+```
