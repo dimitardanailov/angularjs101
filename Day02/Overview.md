@@ -245,6 +245,7 @@ function VehiclesController() {
 		{ 'id': 4, 'name': 'Super Fighter', 'group': 2 },
 		{ 'id': 5, 'name': 'Z-Wing Fighter', 'group': 2 }
 	];
+}
 ```
 
 ```javascript
