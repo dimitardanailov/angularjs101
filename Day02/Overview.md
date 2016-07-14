@@ -203,9 +203,89 @@ function TabController() {
 
 ### Filters
 
+[Documentation](https://docs.angularjs.org/api/ng/filter/filter)
+
+```javascript
+angular.module('app', []);
+
+angular
+	.module('app')
+	.config(configure);
+
+configure.$inject = [];
+
+angular
+	.module('app')
+	.run(runBlock);
+
+runBlock.$inject = [];
+```
+
+```javascript
+angular
+	.module('app')
+	.controller('VehiclesController', VehiclesController);
+
+VehiclesController.$inject = [];
+
+function VehiclesController() {
+	var vm = this;
+
+	vm.groups = [
+		{ 'id': 0, 'name': 'All' }, 
+		{ 'id': 1, 'name': 'High priority group' }, 
+		{ 'id': 2, 'name': 'Low priority group' },
+	];
+
+	vm.vehicles = [
+		{ 'id': 1, 'name': 'X-Wing Fighter', 'group': 1 },
+		{ 'id': 2, 'name': 'Tie Fighter' , 'group': 1 },
+		{ 'id': 3, 'name': 'Y-Wing Fighter', 'group': 1 },
+
+		{ 'id': 4, 'name': 'Super Fighter', 'group': 2 },
+		{ 'id': 5, 'name': 'Z-Wing Fighter', 'group': 2 }
+	];
+```
+
+```javascript
+angular
+	.module('app')
+	.filter('groupFilter', groupFilter);
+
+groupFilter.$inject = [];
+
+function groupFilter() {
+	return function(records, filterCriteria) {
+		if (filterCriteria.id > 0) {
+			var tempArray = [];
+
+			 Array.prototype.forEach.call(records, function(record) {
+				if (filterCriteria.id === record.group) {
+					tempArray.push(record);
+				}
+			 });
+
+			 return tempArray;
+		}
+
+		return records;
+	}
+}
+```
+
+```html
+<select name="show-filter" ng-model="filter"></select>
+
+<li ng-repeat="vehicle in vm.vehicles | groupFilter:filter"></li>
+```
+
+[Demo](https://plnkr.co/edit/XZ7KgU0OWbGfD3F5PTbc?p=preview)
+
 ### Components
 
 [Documentation](https://docs.angularjs.org/guide/component)
 
 ```javascript
 ```
+
+[Demo](https://plnkr.co/edit/QReUxb?p=preview)
