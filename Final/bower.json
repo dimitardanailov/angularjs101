@@ -1,0 +1,27 @@
+{
+  "name": "angularjs-mentormate-101",
+  "description": "Porject will demonstate communication between Angularjs and Firebase",
+  "main": "app.js",
+  "authors": [
+    "Dimitar Danailov <dimityr.danailov@gmail.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "Firbase",
+    "Angularjs",
+    "Angular",
+    "1",
+    "Angular1",
+    "MentorMate"
+  ],
+  "homepage": "https://github.com/dimitardanailov/angularjs101",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+  }
+}
