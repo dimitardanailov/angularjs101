@@ -6,6 +6,9 @@ import babel from 'gulp-babel';
 // Cleaning filesystem
 import del from 'del';
 
+// Contact and ordering
+import runSequence from 'run-sequence';
+
 // Minification Javascript and Browserify
 import browserify from 'browserify';
 import uglify from 'gulp-uglify';

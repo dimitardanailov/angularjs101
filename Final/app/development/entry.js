@@ -16,5 +16,5 @@ require('./angular/routes/app.route.js');
 
 // Hello world
 require('./angular/helloworld/HelloWorld.Controller.js');
-require('./angular/helloworld/HelloWorld.Module.js');
 require('./angular/helloworld/HelloWorld.Route.js');
+require('./angular/helloworld/HelloWorld.Module.js');

@@ -1,4 +1,4 @@
-import moduleName from 'angular/app.module';
+import moduleName from '../app.module';
 import Configuration from './Configuration';
 
 angular

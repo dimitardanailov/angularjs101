@@ -1,5 +1,5 @@
-import module from 'angular/app.module';
-import HelloWorldRouteConfiguration from 'HelloWorld.Route.js';
+import module from '../app.module';
+import HelloWorldRouteConfiguration from './HelloWorld.Route';
 
 angular
 	.module(module + '.helloworld', [

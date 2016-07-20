@@ -26,6 +26,9 @@ function Configuration($urlRouterProvider, $locationProvider, $httpProvider, $st
 			abstract: true,
 			template: '<section ui-view class="widgets"></section>'
 		});
+
+	// use the HTML5 History API
+	$locationProvider.html5Mode(true);
 };
 
 Configuration.$inject = ['$urlRouterProvider', '$locationProvider', '$httpProvider', '$stateProvider', '$sceDelegateProvider'];

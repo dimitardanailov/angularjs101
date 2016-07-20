@@ -1,6 +1,6 @@
 class HelloWorldController {
 	constructor() {
-		console.log(vm);
+		this.title = 'Hello firebase !!!';
 	}
 };
 
