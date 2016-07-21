@@ -12,6 +12,18 @@
 			<section ui-view></section>
 		</section>
 
+		<script src="https://www.gstatic.com/firebasejs/3.2.0/firebase.js"></script>
+		<script>
+			// Initialize Firebase
+			var config = {
+				apiKey: "AIzaSyCyCPLfABCj8VmFTpvs6oUhGMDY9-M0_Zc",
+				authDomain: "mentormate-angularjs-final.firebaseapp.com",
+				databaseURL: "https://mentormate-angularjs-final.firebaseio.com",
+				storageBucket: "mentormate-angularjs-final.appspot.com",
+			};
+			firebase.initializeApp(config);
+		</script>
+
 		<script src="app/production/application.min.js"></script>
 	</body>
 </html>

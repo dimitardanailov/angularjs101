@@ -12,3 +12,6 @@
  - [browserify](http://browserify.org/)
  - [Firebase](https://www.firebase.com/)
  - [Course App](https://github.com/dimitardanailov/angularjs101/tree/master/Final)
+
+#### Articles
+ - [AngularJS and scope.$apply](http://jimhoskins.com/2012/12/17/angularjs-and-apply.html)
