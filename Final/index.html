@@ -7,6 +7,16 @@
 
 	<body ng-app="angular-firebase-app">
 		<section class="ui-view-container">
+			<nav>
+				<ul>
+					<li>
+						<a ui-sref="firebase.helloworld">Hello World - Firebase</a>
+					</li>
+					<li>
+						<a ui-sref="vehicles">Vehicles</a>
+					</li>
+				</ul>
+			</nav>
 			<!-- Here is the main ui-view (unnamed) and will be populated by its immediate children's templates
 			unless otherwise explicitly named views are targeted. It's also employing ng-animate. -->
 			<section ui-view></section>
