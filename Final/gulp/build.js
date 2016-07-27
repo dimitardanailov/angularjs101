@@ -59,6 +59,10 @@ gulp.task('minify', (callback) => {
 	runSequence(['minify:javascript', 'minify:styles'], callback);
 });
 
+gulp.task('copy-index-html', () => {
+	gulp.src('./index.html').pipe(gulp.dest('./public'));
+});
+
 class GulpHelper {
 	/**
    * Browserify has become an important and indispensable tool but requires being wrapped before working well with gulp.

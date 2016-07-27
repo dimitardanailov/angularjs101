@@ -6,7 +6,7 @@ class GulpJavascriptConfiguration {
 		this.configurations = {
 			'folderStructure' : {
 				'baseDevelopment': './app/development',
-				'baseProduction': './app/production'
+				'baseProduction': './public/app/production'
 			}
 		}
 

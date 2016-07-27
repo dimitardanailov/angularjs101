@@ -11,3 +11,4 @@ require('./gulp/watch.js');
 gulp.task('default', ['browserify-transform']);
 
 gulp.task('build', ['minify']);
+gulp.task('deploy', ['build', 'copy-index-html']);

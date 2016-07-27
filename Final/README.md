@@ -1,4 +1,4 @@
-# MentorMate Angularjs 101 - Day 03
+# MentorMate Angularjs 101 - Final Project
 
 > “The secret to building large apps is never build large apps. Break your applications into small pieces. Then, assemble those testable, bite-sized pieces into your big application” - Justin Meyer Author JavaScriptMVC
 
