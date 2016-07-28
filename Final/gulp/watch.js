@@ -17,5 +17,5 @@ gulp.task('watch', () => {
 	// Documentation: https://github.com/isaacs/node-glob
 	const trackingFiles = js.configuration.folderStructure.baseDevelopment + '/**';
 
-	gulp.watch(trackingFiles, ['browserify-transform']);
+	gulp.watch(trackingFiles, ['copy-index-html', 'browserify-transform']);
 });

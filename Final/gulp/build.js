@@ -67,7 +67,7 @@ gulp.task('copy-views', () => {
 	// Destination
 	const destination = js.configuration.folderStructure.angular.base.replace('.', './public');
 	console.log('Target folder', targetFolder);
-	console.log('Destinaation folder', destination);
+	console.log('Destination folder', destination);
 
 	gulp.src(targetFolder).pipe(gulp.dest(destination));
 });

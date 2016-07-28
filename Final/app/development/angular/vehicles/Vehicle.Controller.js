@@ -5,8 +5,6 @@ class VehicleController {
 
 	constructor(VehicleService) {
 		this.vehicles = VehicleService.getVehicles();
-
-		console.log(this);
 	}
 }
 

@@ -3,7 +3,7 @@
 Documentation: [https://firebase.google.com/docs/cli/](https://firebase.google.com/docs/cli/)
 
 ##### Main features
- - Producction grade static hosting
+ - Production grade static hosting
  - Deploy web apps to a global CDN in a single command
  - Deployed apps automatically provisioned an SSL certificate
 

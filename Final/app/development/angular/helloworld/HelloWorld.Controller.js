@@ -1,17 +1,19 @@
 class HelloWorldController {
-	constructor() {
+	constructor($rootScope) {
 		this.title = 'Hello firebase !!!';
 
-		this.loadFirebaseData();
+		this.loadFirebaseData($rootScope);
 	}
 
-	loadFirebaseData() {
+	loadFirebaseData($rootScope) {
 		const dbRef = firebase.database().ref().child('text');
 		dbRef.on('value', snap => {
 			this.title = snap.val();
 
 			console.log('Angularjs', this.title);
 			console.log('Firebase', snap.val());
+			// Update view 
+			$rootScope.$apply();
 		});
 	}
 
@@ -20,6 +22,6 @@ class HelloWorldController {
 	}
 };
 
-HelloWorldController.$inject = [];
+HelloWorldController.$inject = ['$rootScope'];
 
 export default HelloWorldController;
