@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "mentormate-angularjs-final"
+    "default": "mentormate-angularjs-final",
+    "staging": "mentormate-angularjs-staging"
   }
 }

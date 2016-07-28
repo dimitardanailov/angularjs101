@@ -28,3 +28,19 @@ firebase deploy
 ```bash
 firebase open
 ```
+
+```bash
+firebase use --add
+```
+
+```bash
+firebase use [alias name]
+```
+
+```bash
+firebase use default
+```
+
+```bash
+firebase use staging
+```
