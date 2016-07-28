@@ -1,5 +1,4 @@
 import VehicleService from './Vehicle.Service';
-console.log(VehicleService);
 
 class VehicleController {
 
