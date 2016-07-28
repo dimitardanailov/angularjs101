@@ -22,6 +22,7 @@ import minifyCss from 'gulp-minify-css';
 
 // Load Javascript Configurations
 import js from './configurations/javascript';
+// console.log(js);
 
 /**
  * Task will delete application production files.
@@ -59,7 +60,19 @@ gulp.task('minify', (callback) => {
 	runSequence(['minify:javascript', 'minify:styles'], callback);
 });
 
-gulp.task('copy-index-html', () => {
+gulp.task('copy-views', () => {
+	// Target 
+	const htmlFiles = '**/views/*.html';
+	const targetFolder = `${js.configuration.folderStructure.angular.base}/${htmlFiles}`;
+	// Destination
+	const destination = js.configuration.folderStructure.angular.base.replace('.', './public');
+	console.log('Target folder', targetFolder);
+	console.log('Destinaation folder', destination);
+
+	gulp.src(targetFolder).pipe(gulp.dest(destination));
+});
+
+gulp.task('copy-index-html', ['copy-views'], () => {
 	gulp.src('./index.html').pipe(gulp.dest('./public'));
 });
 

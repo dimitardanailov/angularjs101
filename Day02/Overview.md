@@ -111,7 +111,7 @@ function VehiclesController(VehiclesService) { // Injection
 ```javascript
 angular
   .module('app')
-  .controller('VehicleService', VehicleService);
+  .service('VehicleService', VehicleService);
 
 function VehicleService() {
 	this.getVehicles = function() {
